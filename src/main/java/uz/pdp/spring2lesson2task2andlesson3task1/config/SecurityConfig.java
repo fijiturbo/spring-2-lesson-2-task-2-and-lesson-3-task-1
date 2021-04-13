@@ -34,10 +34,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .withUser("operator").password(passwordEncoder().encode("operator"))
-                .roles(Role.OPERATOR).authorities(Privilege.ADD_PRODUCT, Privilege.READ_ALL_PRODUCTS, Privilege.READ_ONE_PRODUCT,
+                .roles(Role.OPERATOR).authorities(Privilege.READ_ALL_PRODUCTS, Privilege.READ_ONE_PRODUCT,
                 Privilege.ORDER_OPERATIONS);
 
     }
+    //Privilege.ADD_PRODUCT, operatordan olib tashlandi
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
